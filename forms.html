@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS PRACTICE</title>
+</head>
+<body>
+    <form action="list.html" method="get">
+        <fieldset>
+        <legend>PERSONAL DETAILS</legend>
+        <div>
+     <label for="name">NAME:</label>
+    <input type="text" name="USERNAME" id="name" placeholder="ENTER YOUR NAME:" required>
+   </div>
+    <div>
+        <label for="email">EMAIL:</label>
+    <input type="email" name="EMAILID" id="email" placeholder="ABCD@gmail.com" required>
+    </div>
+    <div>
+        <label for="password">PASSWORD:</label>
+    <input type="password" name="password" id="password" maxlength="10" required>
+    </div>
+    <div>
+        <label >
+        GENDER:
+         <input type="radio" name="sex"  value="MALE">MALE
+    <input type="radio" name="sex"  value="FEMALE"> female
+    </label>
+    </div>
+  <div> 
+    <label >CHOOSE PLACE</label>
+    <select name="PLACE" >
+        <option value="DELHI">delhi</option>
+    <option value="MUMBAI">mumbai</option>
+    <option value="CHENNAI">chennai</option>
+   </select>
+</div>
+<div>
+    <label >MESSAGE:
+        <textarea name="NOTE_TO_SELF"  rows="4" cols="5">btech cse student</textarea>
+    </label>
+</div>
+    <button type="submit">SUBMIT</button>
+    </fieldset>
+    </form>
+    
+</body>
+</html>
