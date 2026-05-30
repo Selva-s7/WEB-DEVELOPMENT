@@ -1,0 +1,14 @@
+h1{
+    font-size:large;
+    color: darkgreen;
+}
+p{
+    color: red;
+}
+.intro{
+    font-size: 40px ;
+    color:yellow;
+}
+.card p{
+    color:blue;
+}
