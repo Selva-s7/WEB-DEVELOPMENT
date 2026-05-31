@@ -1,0 +1,16 @@
+*{box-sizing: border-box;}
+.hero{
+    height: 100vh;
+}
+.container{
+    width:800px;
+    margin:0 auto
+}
+p
+{
+    font-size: 1rem;
+    
+}
+h2{
+    font-size: size 1.5rem;
+}
