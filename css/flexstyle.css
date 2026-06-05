@@ -1,0 +1,33 @@
+*
+{
+    box-sizing: border-box;
+}
+.navcontainer
+{
+    display: flex;
+   flex-direction: row;
+   justify-content:flex-end;
+    flex:1;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.logo
+{
+    
+    height:100px;
+    margin-right: auto;
+}
+.container
+{
+    display: flex;
+    flex:1;
+    gap:100px;
+}
+.card1
+{
+    background-color: orangered;
+}
+.card3
+{
+    background-color:green;
+}

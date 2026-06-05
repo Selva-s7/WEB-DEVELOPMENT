@@ -1,0 +1,19 @@
+*
+{
+    box-sizing: border-box;
+}
+.card
+{
+    display: inline-block;
+    width: 350px;
+    padding:16px;
+    position: relative;
+    border: 1px solid black;
+}
+.card .badge
+{   
+    position: absolute;
+    top:0;
+    right: 0;
+    border: 1px solid green;
+}

@@ -1,0 +1,15 @@
+.box {
+
+  width: 100px;
+  height: 100px;
+  background: lightgray;
+  position: relative;
+ 
+}
+
+.highlight {
+    top: -20px;
+  position: relative;
+  z-index: 999;
+  background: coral;
+}
