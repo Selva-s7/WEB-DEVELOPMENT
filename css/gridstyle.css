@@ -1,0 +1,36 @@
+*
+{
+    box-sizing: border-box;
+}
+.container
+{
+    display: grid;
+   grid-template-columns: 200px 1fr;
+   grid-template-rows: 60px 1fr 40px;
+   grid-template-areas: 
+   "FIRST FIRST"
+   "SECOND THIRD"
+   "FOURTH FOURTH";
+   height: 100vh;
+    
+}
+.nav
+{
+    grid-area:FIRST;
+    background-color: red;
+}
+.sidebar
+{
+    grid-area:SECOND;
+    background-color: blue;
+}
+.content
+{
+    grid-area:THIRD;
+    background-color: green;
+}
+.foot
+{
+    grid-area: FOURTH;
+    background-color: yellow;
+}
