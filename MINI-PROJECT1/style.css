@@ -15,6 +15,10 @@
     
     align-items: center;
 }
+.container a
+{
+    text-decoration: none;
+}
 .logo
 {
     margin-right: auto;
