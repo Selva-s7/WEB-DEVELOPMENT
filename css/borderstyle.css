@@ -1,0 +1,16 @@
+*
+{
+    box-sizing: border-box;
+}
+.avatar {
+    
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: coral;
+  box-shadow: 0 0 8px black;
+}
+.avatar p
+{
+    margin: 0;
+}
