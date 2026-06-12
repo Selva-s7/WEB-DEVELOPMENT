@@ -6,49 +6,57 @@
 {
     display: flex;
     flex-direction: row;
-    
-    background-color: black;
+    background: #1B1212;
     color: yellow;
-    
     gap: 10px;
     padding:10px;
-    
     align-items: center;
+    border-bottom:1px solid yellow;
 }
 .container a
 {
     text-decoration: none;
+   
 }
 .logo
-{
+{   
     margin-right: auto;
+     width:30px;
+    height:30px;
+    border-radius: 50%;
 }
 .hero
 {
+    color:rgba(0,0,1);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     height: 100vh;
-    background-color: aqua;
-  
+    background:linear-gradient(to right ,rgb(210, 11, 210),#DADBDD);
 }
 .card
 {
     display: flex;
     gap: 10px;
-    
     justify-content: space-evenly;
-    background-color:black;
+    background: #818589;
 }
 .subcard
 {   flex:1;
     padding: 10px 5px;
     border: 1px solid yellow;
     color: white;
+    border-radius:8px;
+    box-shadow: 0 1px 8px rgba(0,0,0 0.5);
 }
 .hero,.subcard
 {
     font-size: 1.5rem;
+}
+.subcard .shop
+{
+    border-radius: 999px;
+    padding: 1px 10px;
+    border:none
 }
