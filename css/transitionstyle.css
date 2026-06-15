@@ -1,0 +1,31 @@
+.btn
+{
+    background: coral;
+    color: white;
+    transition: background 1s ease,transform 1s ease;
+}
+.btn:hover
+{
+    background: darkblue;
+    transform: scale(1.1);
+}
+.card
+{
+    box-shadow: 0 2px 7px rgba(0,0,0,0.5);
+    transition: transform 1s ease,box-shadow 1s ease;
+}
+.card:hover
+{
+    box-shadow: 0 5px  7px rgba(0,0,0,0.5);
+    transform: translateY(-4px) ;
+}
+.link
+{
+    text-decoration: none;
+    color:gray;
+    transition: color 1s ease;
+}
+.link:hover
+{
+    color:blue;
+}
