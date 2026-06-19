@@ -1,0 +1,24 @@
+.card::before {
+    content:"";
+  color: gold;
+  font-size: 1.2rem;
+  
+}
+.title
+{
+    position: relative;
+    display: inline-block;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: blue;
+}
+
+p::first-letter {
+  font-size: 2rem;
+}

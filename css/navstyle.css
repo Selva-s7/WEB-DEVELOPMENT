@@ -1,0 +1,110 @@
+:root
+{
+    --primary:yellow;
+    --nav-bg: #1e293b;
+  --nav-text: #f8fafc;
+  --spacing: 1.5rem;
+  --accent:red;
+  --shadow-hover:0 4px 8px rgba(0,0,0,0.15);
+  --shadow:0 2px 5px rgba(0,0,0,0.5);
+  --radius:15px;
+}
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    position: sticky;
+    top:0;
+    padding: 1rem var(--spacing);
+   
+}
+.navbar .logo
+{
+    font-size: 1.5rem;
+}
+.listlinks
+{
+    display: flex;
+    gap:2rem;
+    list-style: none;
+   margin: 0;
+   padding: 0;
+}
+.listlinks a
+{
+    text-decoration: none;
+    position: relative;
+    color: var(--nav-text);
+    padding-bottom:4px ;
+
+}
+.listlinks a::after
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 0;
+    height: 2px;
+    background:var(--accent);
+    transition: width 0.3s ease;
+
+}
+.listlinks a:hover::after
+{
+    width:100%;
+}
+.card
+{
+    width:300px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+    background-color: aliceblue;
+    position: relative;
+    padding: 5px 10px;
+    
+}
+.card::before
+{
+    content: "New";
+    position: absolute;
+    top:0px;
+    left:0px
+}
+.card:hover
+{
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+.card .card-img
+{   width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+.hero
+{
+    height: 100vh;
+    background: linear-gradient(135deg,blue,navy 50%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+.hero .hero-title
+{
+    font-weight: 600;
+    font-size: clamp(2rem,5vw,4rem);
+   
+    line-height: 1.2;
+}
+.hero .hero-btn
+{
+    display: inline-block;
+    text-decoration: none;
+}

@@ -1,0 +1,20 @@
+button:hover {
+  background: blue;
+}
+input {
+  border: 2px solid #ccc;      
+  outline: none;               
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+li:nth-child(2) {
+  background: lightyellow;
+}
+
+input:focus {
+  border: 2px solid var(--primary,red);
+}
+
+li:nth-child(odd) {
+  color: gray;
+}

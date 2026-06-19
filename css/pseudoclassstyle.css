@@ -1,0 +1,16 @@
+li:first-child
+{
+    font-weight: bold;
+}
+li:last-child
+{
+    color: red;
+}
+li:nth-child(even)
+{
+    background:lightcoral;
+}
+li:hover
+{
+    text-decoration: underline;
+}

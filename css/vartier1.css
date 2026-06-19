@@ -1,0 +1,18 @@
+:root {
+  --primary: #3b82f6;
+  --spacing: 1.5 rem;
+  --radius: 8px;
+}
+
+.card {
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  background-color: var(--primary,black );
+  color: var(--text-dark,red);
+}
+
+.btn {
+  background: var(--primary);
+  padding: 0.5rem var(--spacing);
+  border-radius: var(--radius)
+}

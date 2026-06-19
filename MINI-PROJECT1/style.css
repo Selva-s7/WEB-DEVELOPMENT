@@ -48,7 +48,7 @@
     border: 1px solid yellow;
     color: white;
     border-radius:8px;
-    box-shadow: 0 1px 8px rgba(0,0,0 0.5);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 .hero,.subcard
 {
@@ -59,4 +59,33 @@
     border-radius: 999px;
     padding: 1px 10px;
     border:none
+}
+@media (max-width:480px)
+{
+    .container
+    {
+        
+        flex-direction: column;
+    }
+    .card
+    {
+        flex-direction: column;
+    }
+    .subcard
+    {
+        width:100%;
+    }
+}
+@media (min-width:481px) and (max-width:768px)
+{
+    .container
+    {
+     
+        flex-direction: column;
+    }
+    .card
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
