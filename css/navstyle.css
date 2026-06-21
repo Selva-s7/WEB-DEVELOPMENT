@@ -108,3 +108,42 @@
     display: inline-block;
     text-decoration: none;
 }
+.footer
+{
+    background: lightseagreen;
+    color: black;
+    padding: 4rem 2rem 2rem;
+}
+.footer .top
+{
+    display: flex;
+    justify-content: space-between;
+    gap:4rem
+}
+.footer .footer-links
+{
+    display: flex;
+    gap:2rem;
+}
+.footer .top .footer-links .col
+{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+.footer .top .footer-links .col a
+{
+    text-decoration: none;
+}
+.footer .end
+{
+    text-align: center;
+}
+@media (max-width:768px)
+{
+    .footer .top .footer-links 
+    {
+        min-width:45%;
+        flex-wrap: wrap;
+    }
+}
