@@ -19,6 +19,8 @@ const addtask=(e)=>{
     ultag.appendChild(litag);
     litag.appendChild(xbtn);
     intag.value="";
+    e?.preventDefault();
+
 };
 form.addEventListener("submit",addtask);
 
