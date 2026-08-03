@@ -9,6 +9,8 @@ function App() {
  const [isValid,toggle]=useState(false);
  console.log("heyy");
  const [isLogged,LogIn]=useState(false);
+ const [city,dispCity]=useState("");
+ const [form,updateForm]=useState({name:"",email:"",password:""});
  const users=[
   {id:1,name:'SELVA',role:'AIML ENGINNER'},
   {id:2,name:'KALAI',role:'ETHICAL HACKER'},
@@ -60,6 +62,29 @@ function App() {
           <p>ROLE:{user.role}</p>
         </div>
       ))}
+    </div>
+    <div>
+      <input type="text" value={city} onChange={e=>{dispCity(e.target.value)}}/>
+      <p>YOU ARE IN CITY:{city}</p>
+    </div>
+    <div>
+      <form action="#" onSubmit={e=>{e.preventDefault();
+        const ob={username,email,password};
+        console.log(ob);
+      }}>
+        <label htmlFor="Name:">Name:</label>
+        <input type="text"  id='Name' value={form.name} onChange={e=>updateForm({...form,name:e.target.value})}/>
+        <label htmlFor="Email" >Email:</label>
+        <input type="email"  value={form.email} onChange={e=>updateForm({...form,email:e.target.value})}/>
+        <label htmlFor="Password">Password</label>
+        <input type="password" value={form.password} onChange={e=>updateForm({...form,password:e.target.value})}/>
+        <button type="submit">Submit</button>
+      </form>
+      <div>
+        <p>NAME:{form.name}</p>
+        <p>Email:{form.email}</p>
+        <p>PASSWORD:{form.password}</p>
+      </div>
     </div>
     </div>
     
