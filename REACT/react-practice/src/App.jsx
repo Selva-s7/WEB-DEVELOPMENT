@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css'
 
 function App() {
@@ -7,16 +8,39 @@ function App() {
  const role='webdev';
  const [value,updateValue]=useState(0);
  const [isValid,toggle]=useState(false);
- console.log("heyy");
+ console.log("I AM SELVA");
  const [isLogged,LogIn]=useState(false);
  const [city,dispCity]=useState("");
  const [form,updateForm]=useState({name:"",email:"",password:""});
+ const [error,setError]=useState("")
  const users=[
   {id:1,name:'SELVA',role:'AIML ENGINNER'},
   {id:2,name:'KALAI',role:'ETHICAL HACKER'},
   {id:3,name:'DEVA',role:'FULL STACK'},
   {id:4,name:'SUNDAR',role:'DATA ANALYST'}
  ]
+ useEffect(()=>{console.log("Mounted Once")},[
+  
+ ])
+ const handleSubmit=(e)=>{e.preventDefault();
+  if(form.name.trim()==="")
+  {
+    setError("NAME FIELD IS REQUIRED");
+    return;
+  }
+  if(!form.email.includes("@"))
+  {
+    setError("EMAIL SHOULD HAVE @");
+    return;
+  }
+  if(form.password.length<6)
+  {
+    setError("password should atleast be length of 6");
+    return;
+  }
+  setError("")
+
+ }
  if(!isLogged)
  {
   return (
@@ -56,22 +80,16 @@ function App() {
       <button onClick={()=>{LogIn(!isLogged)}}>LOG OUT </button>
     </div>
     <div>
-      {users.map((user)=>(
-        <div key={user.id}>
-          <p>NAME:{user.name}</p>
-          <p>ROLE:{user.role}</p>
-        </div>
-      ))}
+      {users.map((user)=>{
+         return <UserCard key={user.id} name={user.name} role={user.role}/>
+      })}
     </div>
     <div>
       <input type="text" value={city} onChange={e=>{dispCity(e.target.value)}}/>
       <p>YOU ARE IN CITY:{city}</p>
     </div>
     <div>
-      <form action="#" onSubmit={e=>{e.preventDefault();
-        const ob={username,email,password};
-        console.log(ob);
-      }}>
+      <form action="#" onSubmit={handleSubmit}>
         <label htmlFor="Name:">Name:</label>
         <input type="text"  id='Name' value={form.name} onChange={e=>updateForm({...form,name:e.target.value})}/>
         <label htmlFor="Email" >Email:</label>
@@ -86,10 +104,20 @@ function App() {
         <p>PASSWORD:{form.password}</p>
       </div>
     </div>
+    {error&& <p style={{color:"red"}}>{error}</p>}
     </div>
     
   )
 }
+}
+function UserCard({name,id,role})
+{
+  return(
+    <div>
+      <p>{name}</p>
+      <p>{role}</p>
+    </div>
+  )
 }
 
 export default App
