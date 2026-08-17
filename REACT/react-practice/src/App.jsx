@@ -8,7 +8,7 @@ function App() {
  const role='webdev';
  const [value,updateValue]=useState(0);
  const [isValid,toggle]=useState(false);
- console.log("I AM SELVA");
+ console.log("check")
  const [isLogged,LogIn]=useState(false);
  const [city,dispCity]=useState("");
  const [form,updateForm]=useState({name:"",email:"",password:""});
@@ -19,9 +19,7 @@ function App() {
   {id:3,name:'DEVA',role:'FULL STACK'},
   {id:4,name:'SUNDAR',role:'DATA ANALYST'}
  ]
- useEffect(()=>{console.log("Mounted Once")},[
-  
- ])
+ useEffect(()=>{console.log("counter changed to value",value)},[value])
  const handleSubmit=(e)=>{e.preventDefault();
   if(form.name.trim()==="")
   {
