@@ -12,7 +12,7 @@ function App() {
  const [isLogged,LogIn]=useState(false);
  const [city,dispCity]=useState("");
  const [form,updateForm]=useState({name:"",email:"",password:""});
- const [error,setError]=useState("")
+ const [error,setError]=useState(""); 
  const users=[
   {id:1,name:'SELVA',role:'AIML ENGINNER'},
   {id:2,name:'KALAI',role:'ETHICAL HACKER'},
@@ -20,6 +20,11 @@ function App() {
   {id:4,name:'SUNDAR',role:'DATA ANALYST'}
  ]
  useEffect(()=>{console.log("counter changed to value",value)},[value])
+ useEffect(()=>
+  {const interval=setInterval(()=>{console.log("tick")},2000);
+ return ()=>{clearInterval(interval)};
+  }
+ ,[]);
  const handleSubmit=(e)=>{e.preventDefault();
   if(form.name.trim()==="")
   {
@@ -103,12 +108,14 @@ function App() {
       </div>
     </div>
     {error&& <p style={{color:"red"}}>{error}</p>}
+    <div>
+    </div>
     </div>
     
   )
 }
 }
-function UserCard({name,id,role})
+function UserCard({name,role})
 {
   return(
     <div>
