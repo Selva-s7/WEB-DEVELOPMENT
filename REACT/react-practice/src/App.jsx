@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import './App.css'
-
+import Card from './Usercard';
 function App() {
  const name='SELVA';
  const bio='AN AIML ENGINEER WHO IS ALSO BUILDING WEBSITE OUT OF HIS CURIOSITY';
@@ -13,6 +13,7 @@ function App() {
  const [city,dispCity]=useState("");
  const [form,updateForm]=useState({name:"",email:"",password:""});
  const [error,setError]=useState(""); 
+const [gituser,setGitHubUser]=useState(null);
  const users=[
   {id:1,name:'SELVA',role:'AIML ENGINNER'},
   {id:2,name:'KALAI',role:'ETHICAL HACKER'},
@@ -25,6 +26,15 @@ function App() {
  return ()=>{clearInterval(interval)};
   }
  ,[]);
+ useEffect(()=>{
+  const fetchUser= async()=>
+    {
+      const res= await fetch("https://api.github.com/users/selva-s7");
+      const data= await res.json();
+      setGitHubUser(data);
+    }
+    fetchUser();
+ },[])
  const handleSubmit=(e)=>{e.preventDefault();
   if(form.name.trim()==="")
   {
@@ -61,6 +71,10 @@ function App() {
     <div>
       <p>WELCOME BACK</p>
       <div>
+        {gituser && <div>
+            <p>Name:{gituser.name}</p>
+            <img src={gituser.avatar_url} alt="not found" />
+          </div>}
      <div>
       <h1>{role}</h1>
       <p>bio:{bio}</p>
@@ -82,15 +96,17 @@ function App() {
       <button onClick={(e)=>{console.log(e.target)}}>LOG STATUS</button>
       <button onClick={()=>{LogIn(!isLogged)}}>LOG OUT </button>
     </div>
-    <div>
+      <div>
       {users.map((user)=>{
-         return <UserCard key={user.id} name={user.name} role={user.role}/>
+         return <Card key={user.id} name={user.name} role={user.role}/> // There is hard rule in JSX custom component must start with caps so that it can differentiate between inbuilt- tags and custom compenonents
       })}
-    </div>
+      </div>
+
     <div>
       <input type="text" value={city} onChange={e=>{dispCity(e.target.value)}}/>
       <p>YOU ARE IN CITY:{city}</p>
     </div>
+
     <div>
       <form action="#" onSubmit={handleSubmit}>
         <label htmlFor="Name:">Name:</label>
@@ -101,28 +117,26 @@ function App() {
         <input type="password" value={form.password} onChange={e=>updateForm({...form,password:e.target.value})}/>
         <button type="submit">Submit</button>
       </form>
+
       <div>
         <p>NAME:{form.name}</p>
         <p>Email:{form.email}</p>
         <p>PASSWORD:{form.password}</p>
       </div>
+
     </div>
+
     {error&& <p style={{color:"red"}}>{error}</p>}
+
     <div>
+
     </div>
-    </div>
-    
+
+  </div>
+
   )
 }
 }
-function UserCard({name,role})
-{
-  return(
-    <div>
-      <p>{name}</p>
-      <p>{role}</p>
-    </div>
-  )
-}
+
 
 export default App
