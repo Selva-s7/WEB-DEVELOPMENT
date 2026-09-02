@@ -29,9 +29,31 @@ const [gituser,setGitHubUser]=useState(null);
  useEffect(()=>{
   const fetchUser= async()=>
     {
-      const res= await fetch("https://api.github.com/users/selva-s7");
-      const data= await res.json();
-      setGitHubUser(data);
+      try
+      {
+
+        const res= await fetch("https://api.github.com/users/selva-s7");
+        if(!res.ok)
+        {
+            if(res.ok===429)
+            {
+              throw new Error("too many requests try again later");
+            }
+            else
+            {
+              throw new Error("please enter a new name");
+            }
+        }
+        else
+        {
+          const data= await res.json();
+          setGitHubUser(data);
+        }
+      }
+      catch(e)
+      {
+        <p>{e.message}</p>
+      }
     }
     fetchUser();
  },[])
